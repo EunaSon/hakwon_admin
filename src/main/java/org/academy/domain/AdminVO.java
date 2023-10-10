@@ -6,13 +6,13 @@ import lombok.Data;
 
 @Data
 public class AdminVO {
-	private String BRANCH_NAME,ADMIN_CODE,ADMIN_ID,NAME,STATUS; 
+	private String BRANCH_NAME, ADMIN_CODE, ADMIN_ID, NAME, STATUS; 
 	private Date ENTER, UPDATEDATE;
 
 }
 
 /*
- * select b."BRANCH_NAME" as ÁöÁ¡, l."ADMIN_NAME" as È¸¿øºÐ·ù, A."ADMIN_ID" as ¾ÆÀÌµð,
- * A."NAME" as ÀÌ¸§ from "ADMIN" A , "LEV" l ,"BRANCH" b where A."ADMIN_CODE" =
+ * select b."BRANCH_NAME" as ï¿½ï¿½ï¿½ï¿½, l."ADMIN_NAME" as È¸ï¿½ï¿½ï¿½Ð·ï¿½, A."ADMIN_ID" as ï¿½ï¿½ï¿½Ìµï¿½,
+ * A."NAME" as ï¿½Ì¸ï¿½ from "ADMIN" A , "LEV" l ,"BRANCH" b where A."ADMIN_CODE" =
  * l."ADMIN_CODE" and A."BRANCHCODE" = b."BRANCHCODE";
  */

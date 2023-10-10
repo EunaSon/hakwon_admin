@@ -23,8 +23,8 @@
                         <textarea class="form-control" rows="3" name="content"></textarea>
                      </div>
                      <div class="form-group">
-                        <label>test1</label>
-                        <input class="form-control" name="admin_id" />
+                        <label>작성자</label>
+                        <input class="form-control" name="admin_id" value="${member.admin_id}" readonly/>
                      </div>
 <!--   파일 첨부                  
                      <div class="row">

@@ -78,8 +78,8 @@ public class MemberController {
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String loginPOST(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception {
 
-		// System.out.println("login 메서드 진입");
-		// System.out.println("전달된 데이터 : " + member);
+		System.out.println("login 메서드 진입");
+		System.out.println("전달된 데이터 : " + member);
 		HttpSession session = request.getSession();
 		MemberVO lvo = memberservice.memberLogin(member);
 
@@ -98,11 +98,9 @@ public class MemberController {
 	
 	  /* 메인페이지 로그아웃 */
     @RequestMapping(value="logout.do", method=RequestMethod.GET)
-    public String logoutMainGET(HttpServletRequest request) throws Exception{
+    public String logoutMainGET(HttpServletRequest request, HttpSession session) throws Exception{
         
         logger.info("logoutMainGET메서드 진입");
-        
-        HttpSession session = request.getSession();
         
         session.invalidate();
         

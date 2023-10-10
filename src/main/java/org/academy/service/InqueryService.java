@@ -14,4 +14,6 @@ public interface InqueryService {
     public List<InqueryVO> getList(Criteria cri);
     
     public int getTotal(Criteria cri);
+    
+    public boolean remove(String notice_code);
 }

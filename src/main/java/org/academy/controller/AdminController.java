@@ -28,23 +28,25 @@ import lombok.extern.log4j.Log4j;
 public class AdminController {
 	
 	private AdminService service;
-	// È­¸éÃ³¸®
+	// È­ï¿½ï¿½Ã³ï¿½ï¿½
 	@GetMapping("/list")
-	public void list(Model model) {
+	public String list(Model model) {
 		
 		log.info("list");
 		model.addAttribute("list", service.getList());
+		return "/Admin/list";
 	
 	}
-	//°ü¸®ÀÚ È­¸éÃ³¸®
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ã³ï¿½ï¿½
 	@GetMapping("/adminlist")
-	public void Adminlist(Model model) {
+	public String Adminlist(Model model) {
 	log.info("list");
 	model.addAttribute("alist", service.getadminList());
+	return "/Admin/adminlist";
 	}
 	 
 	
-	//ÇÐ»ýÁ¶È¸ Ã³¸®
+	//ï¿½Ð»ï¿½ï¿½ï¿½È¸ Ã³ï¿½ï¿½
 	@RequestMapping(value = "/Admin/read", method = RequestMethod.GET)
 	public String read(@ModelAttribute("searchVO")Student_detailVO searchVO, @RequestParam("STU_ID") String STU_ID, Model model) {
 		
@@ -53,7 +55,7 @@ public class AdminController {
 		
 		return "/Admin/read";
 	}
-	//°ü¸®ÀÚ Á¶È¸
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	@RequestMapping(value = "/Admin/adminread", method = RequestMethod.GET)
 	public String read(@ModelAttribute("searchVO")Admin_detailVO searchVO, @RequestParam("ADMIN_ID") String ADMIN_ID, Model model) {
 		
@@ -65,32 +67,32 @@ public class AdminController {
 	
 	  
 	
-//»èÁ¦Ã³¸®
+//ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
 @RequestMapping(value = "/Admin/StudentDelete", method = RequestMethod.GET)
 public String StudentDelete(@ModelAttribute("searchVO") StudentVO searchVO, @RequestParam("STU_ID") String STU_ID, RedirectAttributes redirect , Model model) {
 	
 	try {
 		
 		service.getStudentDelete(STU_ID);
-		redirect.addFlashAttribute("msg", "»èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		redirect.addFlashAttribute("msg", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		
 	} catch (Exception e) {
-		redirect.addFlashAttribute("msg", "¿À·ù°¡ ¹ß»ýµÇ¾ú½À´Ï´Ù.");
+		redirect.addFlashAttribute("msg", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		
 	}
 	
 	return "redirect:/Admin/list";
-}//°ü¸®ÀÚ »èÁ¦Ã³¸®
+}//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
 @RequestMapping(value = "/Admin/Admindelete", method = RequestMethod.GET)
 public String delete(@ModelAttribute("searchVO") AdminVO searchVO, @RequestParam("ADMIN_ID") String ADMIN_ID, RedirectAttributes redirect , Model model) {
 	
 	try {
 		
 		service.getAdminDelete(ADMIN_ID);
-		redirect.addFlashAttribute("msg", "»èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		redirect.addFlashAttribute("msg", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		
 	} catch (Exception e) {
-		redirect.addFlashAttribute("msg", "¿À·ù°¡ ¹ß»ýµÇ¾ú½À´Ï´Ù.");
+		redirect.addFlashAttribute("msg", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		
 	}
 	

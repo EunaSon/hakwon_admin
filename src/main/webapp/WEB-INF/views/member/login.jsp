@@ -180,9 +180,11 @@ h2 {
 					<div class="login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
 				</c:if>
 
+				<%-- 아이디 저장
 				<div class="login_etc">
 					<input type="checkbox" ${empty cookie.id.value ? "":"checked" } name="rememberId">아이디 저장
 				</div>
+				--%>
 				<div class="login_etc2">
 					<div class="join">
 						<a href="join">회원가입</a>

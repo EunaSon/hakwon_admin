@@ -51,5 +51,13 @@ public class InqueryServicelmpl implements InqueryService {
 	      
 	      return mapper.getTotalCount(cri);
 	   }
+	   
+	   @Override
+		public boolean remove(String oi_code) {
+			// TODO Auto-generated method stub
+			log.info("remove..................." + oi_code);
+			
+			return mapper.delete(oi_code) == 1;
+		}
 
 }

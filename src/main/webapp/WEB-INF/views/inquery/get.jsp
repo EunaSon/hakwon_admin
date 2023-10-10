@@ -43,9 +43,15 @@
 		  		<input class="form-control" name="content" value='<c:out value="${inquery.content }" />' readonly="readonly">
 		</div>
           <button data-oper="list" 
-                class="btn btn-primary btn-sm btn-block"
+                class="btn btn-outline-secondary"
                 onclick="location.href='/inquery/list'">
                 목록
+          </button>
+          
+          <button data-oper="remove" 
+                class="btn btn-danger"
+                onclick="location.href='/inquery/list'">
+                삭제
           </button>
           
          <form id="operForm" action="/inquery/modify" method="get">
@@ -67,6 +73,10 @@ var operForm = $('#operForm');
 		operForm.attr("action", "/inquery/list");
 		operForm.submit();
 	});
+	
+	$("button[data-oper='remove']").on("click", function() {
+		operForm.attr("action", "/inquery/remove").submit();
+	})
 });
 	</script>
 

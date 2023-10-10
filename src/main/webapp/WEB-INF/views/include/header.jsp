@@ -103,7 +103,8 @@
                 </a>
              
             </li>
-
+			
+			<%-- 
             <!-- Nav Item - Charts -->
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -125,6 +126,8 @@
                 </li>
 
             <!-- Nav Item - Tables -->
+            --%>
+            
           
 
             <!-- Divider -->
@@ -156,12 +159,13 @@
                     <ul class="navbar-nav ml-auto">
                    
                     <li>
-                   	<a class="logout" href="/member/logout" data-toggle="modal" data-target="#logoutModal">
+                   	<a class="logout" href="" data-toggle="modal" data-target="#logoutModal">
                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                  Logout
                      </a>
                     </li>           
                     </ul>
+                    
 
 
                    

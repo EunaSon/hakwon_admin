@@ -17,8 +17,8 @@
   	
   	 <!-- 로그인 -->
 	<select id="memberLogin" resultType="org.academy.domain.MemberVO">
-		select admin_id, Name from admin where
-		admin_id = #{admin_id} and PWD = #{PWD}
+		select admin_id, NAME from admin 
+		where admin_id = #{admin_id} and PWD = #{PWD}
 	</select>
 
 	<!-- 회원정보수정 -->

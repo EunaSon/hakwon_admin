@@ -8,10 +8,9 @@
  SELECT 
            b.BRANCH_NAME ,  s.ADMIN_CODE ,s.STU_ID , s.NAME ,s.STATUS, s.ENTER, s.UPDATEDATE
         from 
-           STUDENT s , LEV l ,BRANCH b
+           STUDENT s, BRANCH b
          where 
-            s.ADMIN_CODE =l.ADMIN_CODE 
-            and s.BRANCHCODE = b.BRANCHCODE
+            s.BRANCHCODE = b.BRANCHCODE
 
 
 
@@ -22,10 +21,10 @@
 	SELECT
 	   b.BRANCH_NAME ,  a.ADMIN_CODE ,a.ADMIN_ID , a.NAME ,a.STATUS, a.ENTER, a.UPDATEDATE
         from 
-           ADMIN a , LEV l ,BRANCH b
-         where 
-            a.ADMIN_CODE =l.ADMIN_CODE 
-            and a.BRANCHCODE = b.BRANCHCODE
+           ADMIN a , BRANCH b
+        where 
+           a.BRANCHCODE = b.BRANCHCODE
+        order by a.ADMIN_CODE asc, a.BRANCHCODE asc 
 
 	]]>
 	</select>

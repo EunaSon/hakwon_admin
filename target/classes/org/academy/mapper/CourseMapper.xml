@@ -34,18 +34,19 @@ PUBLIC "-//mybatis.org.//DTD Mapper 3.0//EN"
 	
 		<![CDATA[
 		   select branch_name, course_name, course_code, class_code, class_name, status,teacher_name, start_date, end_date
-    		from (select /*+INDEX_DESC (CLASS PK_CLASS )*/ 
+    		from 
+    			(select /*+INDEX_DESC (CLASS PK_CLASS )*/ 
 					rownum rn, branch_name, course_name, course_code, class_code, class_name, status,teacher_name, start_date, end_date
 				from
-			(select 
-                    co.branch_name, co.course_name, cl.course_code, cl.class_code,cl.class_name, cl.status,cl.teacher_name, start_date, end_date
-				from
-					class cl
-					INNER JOIN course co
-					ON cl.course_code = co.course_code
-				where 
+					(select 
+                   		 co.branch_name, co.course_name, cl.course_code, cl.class_code,cl.class_name, cl.status,cl.teacher_name, start_date, end_date
+					from
+						class cl
+						INNER JOIN course co
+						ON cl.course_code = co.course_code
+					where 
                 
-                ]]>
+        ]]>
                 
                 <include refid="criteria"></include>
 		<![CDATA[		

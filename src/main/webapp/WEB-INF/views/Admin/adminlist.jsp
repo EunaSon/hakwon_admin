@@ -50,9 +50,6 @@ pageEncoding="UTF-8"%>
         </table>
       </div>
                  
-                 <form id='actionForm' action="/Admin/adminread" method='get'>
-            		
-           		 </form>
                            		 
         
    

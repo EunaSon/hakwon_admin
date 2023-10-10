@@ -18,4 +18,7 @@ public interface InqueryMapper {
 		public List<InqueryVO> getListWithPaging(Criteria cri);
 		   
 		public int getTotalCount(Criteria cri);
+		
+		//delete
+		public int delete(String oi_code);
 }

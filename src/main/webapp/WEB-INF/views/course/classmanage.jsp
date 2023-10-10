@@ -21,6 +21,7 @@
         <div>
            <button id ='regBtn' type="button" class="btn btn-secondary  float-right">강의 등록</button><br>
         </div>
+        
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -44,20 +45,15 @@
               		<td><c:out value="${course.branch_name}"/></td> 
               		<td><c:out value="${course.course_name}"/></td>   
               		<td>
-              	
- 
-              		<c:out value="${course.class_name }"/>
-              		
+              			<c:out value="${course.class_name }"/>
               		</td>   
               		<td><c:out value="${course.teacher_name }"/></td>   
               		<td><fmt:formatDate pattern="yyyy/MM/dd" value="${course.start_date }"/></td>   
               		<td><fmt:formatDate pattern="yyyy/MM/dd" value="${course.end_date }"/></td>   
               		<td>
-              		<form id="classcode" action="/course/classmanage" method="get">
-             
-                	
-              		<a class="video" href='<c:out value="${course.class_code }"/>'>동영상</a>
-              		</form>
+              			<form id="classcode" action="/course/classmanage" method="get">
+              				<a class="video" href='<c:out value="${course.class_code }"/>'>동영상</a>
+              			</form>
               		</td>
               		
               		<td>
